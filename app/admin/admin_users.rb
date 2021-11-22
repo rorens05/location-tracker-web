@@ -7,10 +7,10 @@ ActiveAdmin.register AdminUser, as: "Admins" do
     id_column
     column :email
     column :name
-    column :role
-    column :status
-    column :current_sign_in_at
-    column :sign_in_count
+    column :status do |item|
+      status_tag item.status
+
+    end
     column :created_at
     actions
   end
@@ -27,12 +27,31 @@ ActiveAdmin.register AdminUser, as: "Admins" do
       f.input :image, as: :file
       f.input :email
       f.input :name
-      f.input :role
-      f.input :status
       f.input :password
       f.input :password_confirmation
     end
     f.actions
+  end
+
+  show do 
+    panel "Admin Info" do
+      columns do
+        column span: 4 do
+          attributes_table_for resource do
+            row :name
+            row :email
+            row :status do
+              status_tag resource.status
+            end
+          end
+        end
+        if resource.image.attached?
+          column span: 1 do
+            image_tag resource.image, class: 'w-100'
+          end
+        end
+      end
+    end
   end
 
 end

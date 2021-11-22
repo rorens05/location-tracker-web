@@ -1,6 +1,6 @@
 ActiveAdmin.register WorkingFile do
   permit_params :or_no, :or_date, :master_list_id, :particular, :member, :amount
-  menu priority: 6
+  menu priority: 6, label: 'Ledgers'
   
   form do |f|
     f.input :master_list
@@ -24,9 +24,6 @@ ActiveAdmin.register WorkingFile do
     end
     column :particular do |working_file|
       status_tag working_file.particular
-    end
-    column :member do |working_file|
-      status_tag working_file.member
     end
     actions
   end 

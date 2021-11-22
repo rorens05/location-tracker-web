@@ -9,8 +9,18 @@ ActiveAdmin.register_page "Dashboard" do
         h3 "CDA Registration No. 9520-1010000000045365"
         h3 "TIN N0. 737-879-958-000"
       end
+      
+      div do
+        image_tag "/images/mission.png", style: 'width: 70%; display: block; margin: 50px auto'
+      end
+      div do
+        image_tag "/images/vision.png", style: 'width: 70%; display: block; margin: 50px auto'
+      end
+      div do
+        image_tag "/images/core-values.png", style: 'width: 70%; display: block; margin: 50px auto'
+      end
     end
-
+    
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do

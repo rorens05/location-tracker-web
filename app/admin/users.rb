@@ -5,6 +5,7 @@ ActiveAdmin.register User do
                 :username, 
                 :contact_number, 
                 :first_name, 
+                :middle_name, 
                 :last_name, 
                 :gender, 
                 :birthday, 
@@ -66,16 +67,17 @@ ActiveAdmin.register User do
     f.input :username
     f.input :contact_number
     f.input :first_name
+    f.input :middle_name
     f.input :last_name
     f.input :email
-    f.input :country, as: :string
+    # f.input :country, as: :string
     f.input :gender
-    f.input :region
-    f.input :province
-    f.input :city
+    # f.input :region
+    # f.input :province
+    # f.input :city
     f.input :birthday
-    f.input :role
-    f.input :status
+    # f.input :role
+    # f.input :status
     
     f.input :sss
     f.input :tin

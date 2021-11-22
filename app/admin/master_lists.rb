@@ -1,12 +1,11 @@
 ActiveAdmin.register MasterList do
-  menu priority: 6
+  menu priority: 5
   permit_params :user_id, :share_capital, :withdrawal, :balance, :membership_fee, :consolidation, :status
   
   form do |f|
     f.input :image, as: :file
     f.input :user
-    f.input :consolidation
-    f.input :status
+    # f.input :status
     f.actions
   end
 
@@ -86,13 +85,13 @@ ActiveAdmin.register MasterList do
         row "Status of Consolidation", :share_capital do
           master_list.status_of_consolidation
         end
-        row "Status of Consolidation", :share_capital do
+        row "Membership type", :share_capital do
           status_tag master_list.membership
         end
       end 
     end
     br
-    panel "Working Files" do
+    panel "History" do
       table_for master_list.working_files do
         column :id do |working_file|
           link_to working_file.id, admin_working_file_path(working_file)

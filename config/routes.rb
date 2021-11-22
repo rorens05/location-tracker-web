@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'faq' => 'home#faq'
   get 'profile' => 'profile#index'
   get 'profile/change_password'
   post 'profile/update_password'

@@ -1,10 +1,9 @@
 class MasterList < ApplicationRecord
   belongs_to :user
-  has_many :working_files
+  has_many :working_files, dependent: :destroy
 
   validates :user, uniqueness: true
   
-
   enum status: ["Active", "Inactive"]
 
   def name
@@ -24,7 +23,7 @@ class MasterList < ApplicationRecord
   end
 
   def membership 
-    return "associate" if paid_membership_fee < 2000
+    return "associate" if paid_share_capital < 2000
     return "regular"
   end
 

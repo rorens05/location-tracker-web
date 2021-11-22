@@ -33,7 +33,7 @@ class User < ApplicationRecord
   validates :birthday, presence: true
   validates :middle_name, presence: true
   validates :gender, presence: true
-  validates :address, presence: true
+  # validates :address, presence: true
   validates :sss, presence: true
   validates :tin, presence: true
   validates :philhealth, presence: true
