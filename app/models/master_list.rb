@@ -22,17 +22,17 @@ class MasterList < ApplicationRecord
     working_files.where(particular: "membership_fee").sum(:amount)
   end
 
-  def membership 
-    return "associate" if paid_share_capital < 2000
-    return "regular"
-  end
-
   def paid_consolidation
     working_files.where(particular: "consolidation").sum(:amount)
   end
 
   def balance_of_share_capital
     (paid_share_capital || 0) - (withdrawal_of_sc || 0)
+  end
+  
+  def membership
+    return "associate" if balance_of_share_capital < 2000
+    return "regular"
   end
 
   def status_of_share_capital
