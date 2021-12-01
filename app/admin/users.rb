@@ -75,7 +75,7 @@ ActiveAdmin.register User do
     # f.input :region
     # f.input :province
     # f.input :city
-    f.input :birthday
+    f.input :birthday, as: :date_picker
     # f.input :role
     # f.input :status
     

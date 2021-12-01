@@ -32,7 +32,7 @@ ActiveAdmin.register_page "Messages" do
   content do
     user = User.find_by_id(params[:user_id]) || User.all.first
 
-    render 'messages', users: User.all, messages: current_admin_user.messages.where(user_id: user.id).order(created_at: :desc), user: user
+    render 'messages', users: User.all, messages: current_admin_user.messages.where(user_id: user.id).order(created_at: :desc), selected_user: user
   end
 
 

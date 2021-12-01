@@ -6,7 +6,7 @@
     <div class="col-sm-3">
       <% users.each do |user| %>
         <a href="<%= "/admin/messages?user_id=#{user.id}" %>">
-          <div class="w-100 d-flex align-items-center px-2 py-3 mb-2 border rounded <%= params[:user_id] == user.id.to_s ? "message-item-active" : "" %>">
+          <div class="w-100 d-flex align-items-center px-2 py-3 mb-2 border rounded <%= selected_user.id.to_s == user.id.to_s ? "message-item-active" : "" %>">
             <% if user.image.attached? %>
               <%= image_tag user.image, class: 'message-avatar'  %>
             <% else %>
@@ -82,7 +82,7 @@
       </div>
       <div class="input-message mt-3">
         <%= simple_form_for(Message.new, url: "/admin/messages/create", html: { method: :post }, local: true) do |f| %>
-          <%= f.hidden_field :user_id, value: user.id %>
+          <%= f.hidden_field :user_id, value: selected_user.id %>
           <%= f.input :attachment %>
           <div class="d-flex align-item-center mt-3">
             <input type="text" class="form-control" id="message" placeholder="Message.." name="content">

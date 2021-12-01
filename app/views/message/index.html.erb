@@ -8,7 +8,7 @@
         <div class="col-sm-3">
           <% @admins.each do |admin| %>
             <a href="<%= "/message?admin_user_id=#{admin.id}" %>">
-              <div class="w-100 d-flex align-items-center px-2 py-3 mb-2 border rounded <%= params[:admin_user_id] == admin.id.to_s ? "message-item-active" : "" %>">
+              <div class="w-100 d-flex align-items-center px-2 py-3 mb-2 border rounded <%= @admin.id.to_s == admin.id.to_s ? "message-item-active" : "" %>">
                 <% if admin.image.attached? %>
                   <%= image_tag admin.image, class: 'message-avatar'  %>
                 <% else %>

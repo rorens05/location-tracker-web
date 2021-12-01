@@ -8,7 +8,6 @@ class User < ApplicationRecord
   belongs_to :region, optional: true
   belongs_to :province, optional: true
   belongs_to :city, optional: true
-  has_many :accounts, dependent: :destroy
   has_many :transactions, through: :accounts
   has_many :master_lists, dependent: :destroy
 
