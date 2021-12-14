@@ -3,7 +3,7 @@ ActiveAdmin.register MasterList do
   permit_params :user_id, :share_capital, :withdrawal, :balance, :membership_fee, :consolidation, :status
   
   form do |f|
-    #f.input :image, as: :file
+    # f.input :image, as: :file
     f.input :user
     # f.input :status
     f.actions

@@ -431,3 +431,12 @@ pre.console-prompt-display {
 .registration-container {
   max-width: 600px !important;
 }
+
+html,
+.main-body {
+  background-image: url("/images/bg-3.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100vw 100vh;
+}
