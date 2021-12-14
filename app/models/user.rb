@@ -22,7 +22,7 @@ class User < ApplicationRecord
   enum role: %w[Player]
   enum status: %w[Active Inactive]
   enum online_status: %w[Offline Online]
-  enum login_type: %w[Email Fa'cebook Google Apple]
+  enum login_type: %w[Email Facebook Google Apple]
 
   # validates :confirmation_token, presence: true, uniqueness: { case_sensitive: false }
   # validates :username, presence: true, uniqueness: { case_sensitive: false }
