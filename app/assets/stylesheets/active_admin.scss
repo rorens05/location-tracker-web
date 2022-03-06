@@ -408,3 +408,54 @@
     padding: 0;
   }
 }
+
+.menu_item a {
+  display: flex !important;
+  align-items: center;
+}
+
+.menu_item a::before {
+  content: " ";
+  width: 20px;
+  height: 20px;
+  background-size: 20px, 20px;
+  margin-right: 12px;
+  display: inline-block;
+  background-size: contain;
+}
+
+.menu_item#dashboard a::before {
+  background-image: url(/images/icon/dashboard.png);
+}
+
+.menu_item#master_lists a::before {
+  background-image: url(/images/icon/masterlist.png);
+}
+
+.menu_item#working_files a::before {
+  background-image: url(/images/icon/records.png);
+}
+
+.menu_item#notification_requests a::before {
+  background-image: url(/images/icon/notifications.png);
+}
+
+.menu_item#messages a::before {
+  background-image: url(/images/icon/chat.png);
+}
+
+.menu_item#reports a::before {
+  background-image: url(/images/icon/reports.png);
+}
+
+.menu_item#about a::before {
+  background-image: url(/images/icon/about.png);
+}
+
+.menu_item#users a::before {
+  background-image: url(/images/icon/users.png);
+}
+
+.menu_item#admins a::before {
+  background-image: url(/images/icon/admin.png);
+}

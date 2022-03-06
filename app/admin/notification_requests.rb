@@ -1,5 +1,5 @@
-ActiveAdmin.register_page "Notification Requests" do
-  menu priority: 7
+ActiveAdmin.register_page "Notification Requests", label: "Notifications" do
+  menu priority: 7, label: "Notifications"
   content do
     if User.unverified_users.count.zero?
       para "No unverified user"
