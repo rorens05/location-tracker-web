@@ -6,6 +6,7 @@
 @import "select2";
 @import "select2-bootstrap";
 @import "active_admin_datetimepicker";
+@import "daterangepicker";
 
 .status_tag {
   &.active,
@@ -360,4 +361,50 @@
 #tabs.header-item .menu_item.current.has_nested .menu .menu_item a {
   background-color: #a0a9f4 !important;
   color: black !important;
+}
+
+.in-range.available {
+  background-color: #357ebd !important;
+  color: white !important;
+}
+
+.filter-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+  input,
+  select {
+    height: 30px;
+    margin-right: 8px;
+  }
+  input[type="submit"] {
+    width: 100px !important;
+  }
+  .daterange {
+    width: 250px;
+  }
+}
+
+.report-container {
+  margin-top: 50px;
+  padding: 50px 20px;
+  border: 1px solid gray;
+}
+
+.summary-table {
+  width: 200px;
+  margin-top: 20px;
+  tr,
+  td,
+  th {
+    border: none !important;
+    padding: 0;
+  }
+  th {
+    text-align: left;
+    font-weight: bold;
+    padding: 0;
+  }
 }

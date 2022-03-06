@@ -65,4 +65,12 @@ module ApplicationHelper
       currency
     end
   end
+
+  def format_daterange(start_date, end_date)
+    if start_date.present? && end_date.present?
+      "#{start_date.strftime('%D')} - #{end_date.strftime('%D')}"
+    else
+      ''
+    end
+  end
 end

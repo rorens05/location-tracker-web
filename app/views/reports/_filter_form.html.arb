@@ -1,0 +1,10 @@
+form class: 'filter-form' do
+  select class: 'particular-select', name: 'particular' do
+    option "All", value: 'all'
+    WorkingFile.particulars.keys.each do |item|
+      option item.titleize, value: item, selected: item == particular
+    end
+  end
+  input type: "text", class: "daterange", name: 'date-range', value: format_daterange(start_date, end_date)
+  input type: "submit"
+end

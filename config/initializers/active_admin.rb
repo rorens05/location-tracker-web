@@ -216,7 +216,7 @@ ActiveAdmin.setup do |config|
   #   config.register_stylesheet 'my_stylesheet.css'
   #
   # You can provide an options hash for more control, which is passed along to stylesheet_link_tag():
-  #   config.register_stylesheet 'my_print_stylesheet.css', media: :print
+  config.register_stylesheet 'print.css', media: :print
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
@@ -241,7 +241,8 @@ ActiveAdmin.setup do |config|
   #
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      menu.add label: "Reports", priority: 5
+      menu.add label: "Reports", priority: 9
+      menu.add label: "About", priority: 10
     end
   end
 
