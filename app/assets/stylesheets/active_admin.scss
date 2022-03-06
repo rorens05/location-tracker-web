@@ -343,3 +343,21 @@
 .login-bg {
   background-color: rgb(179, 190, 255) !important;
 }
+
+.menu .menu_item.current a {
+  color: white !important;
+}
+
+.menu .menu_item a {
+  background-color: #a0a9f4 !important;
+  color: white !important;
+}
+
+#tabs.header-item .menu_item.current.has_nested .menu .menu_item.current a {
+  background-color: #4554ff !important;
+  color: white !important;
+}
+#tabs.header-item .menu_item.current.has_nested .menu .menu_item a {
+  background-color: #a0a9f4 !important;
+  color: black !important;
+}
