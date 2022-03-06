@@ -21,7 +21,8 @@ ActiveAdmin.register User do
                 :sss,
                 :tin,
                 :philhealth,
-                :pag_ibig
+                :pag_ibig,
+                :id_image
 
 
   member_action :verify, method: :post do
@@ -63,6 +64,7 @@ ActiveAdmin.register User do
   form do |f|  
     f.semantic_errors *f.object.errors.keys
     f.input :image, as: :file
+    f.input :id_image, as: :file
 
     f.input :username
     f.input :contact_number
@@ -70,19 +72,12 @@ ActiveAdmin.register User do
     f.input :middle_name
     f.input :last_name
     f.input :email
-    # f.input :country, as: :string
     f.input :gender
-    # f.input :region
-    # f.input :province
-    # f.input :city
     f.input :birthday, as: :date_picker
-    # f.input :role
-    # f.input :status
-    
-    f.input :sss
-    f.input :tin
-    f.input :philhealth
-    f.input :pag_ibig
+    f.input :sss, label: 'SSS'
+    f.input :tin, label: 'TIN'
+    f.input :philhealth, label: 'PHILHEALTH'
+    f.input :pag_ibig, label: 'PAGIBIG'
     f.input :password
     f.input :password_confirmation
     f.actions
@@ -120,9 +115,14 @@ ActiveAdmin.register User do
                 end
               end
             end
-            if user.image.attached?
+            if user.image.attached? || user.id_image.attached?
               column do
-                image_tag user.image, class: 'width-100'
+                div do
+                  image_tag user.image, class: 'width-100' if user.image.attached?
+                end
+                div do
+                  image_tag user.id_image, class: 'width-100' if user.id_image.attached?
+                end
               end
             end
           end

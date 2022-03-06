@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   has_one_attached :image
+  has_one_attached :id_image
   before_validation :generate_confirmation_token
 
   scope :unverified_users, -> { where(:verified_at => nil)}

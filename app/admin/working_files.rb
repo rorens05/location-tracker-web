@@ -1,6 +1,6 @@
 ActiveAdmin.register WorkingFile do
   permit_params :or_no, :or_date, :master_list_id, :particular, :member, :amount
-  menu priority: 6, label: 'Ledgers'
+  menu priority: 6, label: 'Records'
   
   form do |f|
     f.input :master_list

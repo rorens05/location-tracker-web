@@ -49,7 +49,7 @@ ActiveAdmin.register MasterList do
   end 
 
   show do
-    panel "Master List information" do
+    panel "Member information" do
       attributes_table_for master_list do
         row :name do
           master_list.user

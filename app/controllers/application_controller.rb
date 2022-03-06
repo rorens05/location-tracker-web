@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
       :tin,
       :philhealth,
       :pag_ibig,
+      :id_image,
   ])
   end
 
