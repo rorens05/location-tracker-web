@@ -12,7 +12,7 @@
     <h2 style="margin-top: 12px; margin-bottom: 4px">Ledger Report</h2>
     <h4 style="margin: 0"><%= format_daterange(start_date, end_date) %></h4>
     <h4 style="margin: 0; margin-bottom: 40px"><%= user&.name.present? ? "#{user&.name}'s" : "All" %> Ledgers</h4>
-    <h4 style="margin: 0; margin-bottom: 40px"><%= particular || "All" %> Particular</h4>
+    <h4 style="margin: 0; margin-bottom: 40px"><%= particular.titleize || "All" %> Particular</h4>
   </div>
   <table class="report-table">
     <thead>
