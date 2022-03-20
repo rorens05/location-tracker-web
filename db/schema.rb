@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_14_135618) do
+ActiveRecord::Schema.define(version: 2022_03_20_122450) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -99,6 +99,14 @@ ActiveRecord::Schema.define(version: 2021_11_14_135618) do
     t.index ["province_id"], name: "index_cities_on_province_id"
   end
 
+  create_table "location_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "tracker_id", null: false
+    t.string "latlong"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tracker_id"], name: "index_location_histories_on_tracker_id"
+  end
+
   create_table "master_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.decimal "share_capital", precision: 10
@@ -143,6 +151,14 @@ ActiveRecord::Schema.define(version: 2021_11_14_135618) do
   create_table "regions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trackers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "reference_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -230,6 +246,7 @@ ActiveRecord::Schema.define(version: 2021_11_14_135618) do
   add_foreign_key "accounts", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cities", "provinces"
+  add_foreign_key "location_histories", "trackers"
   add_foreign_key "master_lists", "users"
   add_foreign_key "messages", "admin_users"
   add_foreign_key "messages", "users"

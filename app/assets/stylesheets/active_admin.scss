@@ -188,227 +188,6 @@
   }
 }
 
-.let-player-join-btn {
-  background-color: yellow !important;
-  text-align: center;
-  padding: 4px !important;
-  color: black !important;
-  display: block !important;
-  width: 200px !important;
-  margin: 25px auto;
-}
-
-.roulette-button-option {
-  margin: 24px 0;
-}
-
-.pie-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  .pie {
-    padding: 12px;
-    box-shadow: 1px 1px 4px rgb(186, 186, 186);
-    margin-left: 12px;
-    margin-bottom: 12px;
-    background-color: red;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    img {
-      width: 30px;
-      height: 30px;
-      border-radius: 32px;
-      object-fit: cover;
-    }
-    p {
-      margin: 0 12px !important;
-    }
-  }
-}
-
-.download_links {
-  display: none;
-}
-
-.header-item#tabs {
-  border-right: 10px solid #4554ff;
-  background-color: #a0a9f4;
-
-  .menu_item {
-    &.current {
-      a {
-        background-color: #4554ff !important;
-        color: white;
-      }
-    }
-    a {
-      color: black;
-      text-transform: capitalize;
-      font-weight: bold;
-      &:hover {
-        background-color: #4554ff !important;
-        color: white;
-      }
-    }
-
-    .menu {
-      background-color: #a0a9f4 !important;
-    }
-  }
-}
-
-.site_title,
-.header-item {
-  border-bottom: 3px solid #4554ff !important;
-  background-color: #a0a9f4 !important;
-}
-
-.index {
-  background-color: #eff0ff;
-}
-
-// message
-.message-item-active {
-  border: 1px solid $primary_color !important;
-}
-
-.message-container {
-  height: 55vh;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column-reverse;
-
-  .recipient-message {
-    display: flex;
-    flex-direction: row;
-    .message-content {
-      max-width: 400px;
-      .value {
-        color: black;
-        background-color: rgb(220, 220, 220);
-        padding: 4px 12px;
-        border-radius: 8px;
-      }
-      margin-right: 8px;
-      .attachment-container {
-        width: 100%;
-      }
-    }
-  }
-  .sender-message {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-bottom: 16px;
-    .message-content {
-      max-width: 400px;
-      .value {
-        color: white;
-        background-color: $primary_color;
-        padding: 4px 12px;
-        border-radius: 8px;
-      }
-      margin-right: 8px;
-      .attachment-container {
-        width: 100%;
-      }
-    }
-  }
-}
-
-.input-message {
-}
-
-.message-avatar {
-  width: 30px;
-  height: 30px;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $primary_color;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  margin-right: 8px;
-  object-fit: cover;
-}
-
-.dashboard {
-  h3 {
-    margin: 4px !important;
-    text-align: center;
-  }
-}
-
-.login-bg {
-  background-color: rgb(179, 190, 255) !important;
-}
-
-.menu .menu_item.current a {
-  color: white !important;
-}
-
-.menu .menu_item a {
-  background-color: #a0a9f4 !important;
-  color: white !important;
-}
-
-#tabs.header-item .menu_item.current.has_nested .menu .menu_item.current a {
-  background-color: #4554ff !important;
-  color: white !important;
-}
-#tabs.header-item .menu_item.current.has_nested .menu .menu_item a {
-  background-color: #a0a9f4 !important;
-  color: black !important;
-}
-
-.in-range.available {
-  background-color: #357ebd !important;
-  color: white !important;
-}
-
-.filter-form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 12px;
-  input,
-  select {
-    height: 30px;
-    margin-right: 8px;
-  }
-  input[type="submit"] {
-    width: 100px !important;
-  }
-  .daterange {
-    width: 250px;
-  }
-}
-
-.report-container {
-  margin-top: 50px;
-  padding: 50px 20px;
-  border: 1px solid gray;
-}
-
-.summary-table {
-  width: 200px;
-  margin-top: 20px;
-  tr,
-  td,
-  th {
-    border: none !important;
-    padding: 0;
-  }
-  th {
-    text-align: left;
-    font-weight: bold;
-    padding: 0;
-  }
-}
-
 .menu_item a {
   display: flex !important;
   align-items: center;
@@ -425,37 +204,36 @@
 }
 
 .menu_item#dashboard a::before {
-  background-image: url(/images/icon/dashboard.png);
+  background-image: url(/images/icon/circle.png);
 }
 
-.menu_item#master_lists a::before {
-  background-image: url(/images/icon/masterlist.png);
+.menu_item#map a::before {
+  background-image: url(/images/icon/circle.png);
 }
 
-.menu_item#working_files a::before {
-  background-image: url(/images/icon/records.png);
-}
-
-.menu_item#notification_requests a::before {
-  background-image: url(/images/icon/notifications.png);
-}
-
-.menu_item#messages a::before {
-  background-image: url(/images/icon/chat.png);
-}
-
-.menu_item#reports a::before {
-  background-image: url(/images/icon/reports.png);
-}
-
-.menu_item#about a::before {
-  background-image: url(/images/icon/about.png);
-}
-
-.menu_item#users a::before {
-  background-image: url(/images/icon/users.png);
+.menu_item#trackers a::before {
+  background-image: url(/images/icon/circle.png);
 }
 
 .menu_item#admins a::before {
-  background-image: url(/images/icon/admin.png);
+  background-image: url(/images/icon/circle.png);
+}
+
+.download_links {
+  display: none;
+}
+
+.index_table {
+  thead th,
+  thead th a {
+    background-color: rgb(254, 255, 236) !important;
+    font-weight: bold !important;
+  }
+  th,
+  td {
+    a {
+      padding: 8px !important;
+    }
+    padding: 8px 16px !important;
+  }
 }

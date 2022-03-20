@@ -1,7 +1,7 @@
 FROM ruby:2.7.2
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs npm 
 RUN npm install --global yarn
-
+RUN sudo apt install imagemagick libvips
 # prod 
 # WORKDIR /app
 # COPY . /app
