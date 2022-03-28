@@ -28,7 +28,7 @@ function resetMap() {
   var reference_number = url.searchParams.get("reference_number");
   console.log(reference_number);
 
-  return fetch("/api/v2/locations?reference_number=" + reference_number)
+  return fetch("/api/v2/locations?reference_number=" + encodeURIComponent(reference_number))
   .then((res) => {
     console.log({ res });
     return res.json();
