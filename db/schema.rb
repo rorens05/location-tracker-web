@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_20_122450) do
+ActiveRecord::Schema.define(version: 2022_03_27_113409) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -99,11 +99,26 @@ ActiveRecord::Schema.define(version: 2022_03_20_122450) do
     t.index ["province_id"], name: "index_cities_on_province_id"
   end
 
+  create_table "group_members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.bigint "school_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["school_id"], name: "index_groups_on_school_id"
+  end
+
   create_table "location_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "tracker_id", null: false
     t.string "latlong"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "location_date"
     t.index ["tracker_id"], name: "index_location_histories_on_tracker_id"
   end
 
@@ -153,6 +168,23 @@ ActiveRecord::Schema.define(version: 2022_03_20_122450) do
     t.string "code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.string "address"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "school_id", null: false
+    t.string "student_no"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["school_id"], name: "index_students_on_school_id"
   end
 
   create_table "trackers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -226,6 +258,7 @@ ActiveRecord::Schema.define(version: 2022_03_20_122450) do
     t.string "tin"
     t.string "philhealth"
     t.string "pag_ibig"
+    t.integer "student_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -246,11 +279,13 @@ ActiveRecord::Schema.define(version: 2022_03_20_122450) do
   add_foreign_key "accounts", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cities", "provinces"
+  add_foreign_key "groups", "schools"
   add_foreign_key "location_histories", "trackers"
   add_foreign_key "master_lists", "users"
   add_foreign_key "messages", "admin_users"
   add_foreign_key "messages", "users"
   add_foreign_key "provinces", "regions"
+  add_foreign_key "students", "schools"
   add_foreign_key "transactions", "accounts"
   add_foreign_key "transactions", "categories"
   add_foreign_key "working_files", "master_lists"

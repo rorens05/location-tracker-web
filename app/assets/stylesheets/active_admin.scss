@@ -237,3 +237,15 @@
     padding: 8px 16px !important;
   }
 }
+
+#map {
+  width: 95%;
+  height: 80vh;
+  background-color: rgb(220, 220, 220);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    margin: 0 !important;
+  }
+}

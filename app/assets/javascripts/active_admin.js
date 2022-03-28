@@ -8,6 +8,7 @@
 //= require Chart.bundle
 //= require moment
 //= require daterangepicker
+//= require google_map
 
 jQuery(function () {
   $(
@@ -37,13 +38,7 @@ jQuery(function () {
      }
     })
   });
-  let actionItems = document.querySelectorAll(".action_item a")
-  if(actionItems.length == 1){
-    document.querySelectorAll(".action_item a")[0].innerHTML="New"
-  }else{
-    document.querySelectorAll(".action_item a")[0].innerHTML="Edit"
-    document.querySelectorAll(".action_item a")[1].innerHTML="Delete"
-  }
+ 
 });
 
 document.addEventListener("DOMContentLoaded", function () {

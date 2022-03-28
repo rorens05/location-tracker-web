@@ -37,6 +37,14 @@ ActiveAdmin.register Tracker do
             row :description
             row :reference_number
           end
+          a "View in map", target: '_blank', href: admin_map_path(reference_number: tracker.reference_number ), class: 'button'
+          br
+          br
+          h3 "Location History"
+          table_for resource.location_histories.order(location_date: :desc) do 
+            column :latlong
+            column :location_date
+          end
         end
         if tracker.image.attached? 
           column span: 1 do
