@@ -7,7 +7,11 @@ ActiveAdmin.register Tracker do
     id_column
     column :image do |tracker|
       if tracker.image.attached?
-        image_tag(tracker.image.variant(resize: '100x100'))
+        begin
+          image_tag(tracker.image.variant(resize: '100x100'))
+        rescue Exception
+          para "image is invalid"
+        end
       else
         image_tag('/images/no-image.png', style: 'width: 100px;')
       end
